@@ -1,0 +1,38 @@
+You are an expert at analyzing code. You will be given a code file, and based on this, as well as some code quality rules, I want you to return any code snippets, the exact block of code, that you detect that violate these rules, as well as the rule violated. Return these results in a JSON format. The JSON format should follow:
+{"violations": [
+  {"code_block": the block of code that violates the rules, exactly as it is, "rule": rule, "issue": short description of issue}
+]}. Only return the JSON, nothing else.
+
+Rules:
+Readability: Code should be easily understandable by others.
+Use meaningful variable, function, and class names.
+Add comments to clarify complex logic.
+Consistency: Follow a single coding style and format.
+Use consistent indentation and spacing.
+Stick to established naming conventions (e.g., snake_case, camelCase).
+Simplicity: Write code that is as simple as possible but no simpler.
+Avoid unnecessary complexity and over-engineering.
+Break down large functions into smaller, reusable components.
+Modularity: Write reusable and modular code.
+Use functions, classes, or modules to separate concerns.
+Follow the Single Responsibility Principle: each module or function should have one responsibility.
+Error Handling: Anticipate and handle errors gracefully.
+Use try-catch blocks or equivalent mechanisms to catch exceptions.
+Validate user input and handle edge cases.
+Performance: Write efficient code when necessary.
+Avoid unnecessary loops or nested iterations.
+Optimize for space and time complexity where applicable.
+Documentation: Ensure code is well-documented.
+Provide clear docstrings for functions and classes.
+Include a README or equivalent for project-level information.
+Testing: Write tests to verify the code's correctness.
+Create unit tests for critical functions.
+Follow test-driven development (TDD) practices when possible.
+Encapsulation: Hide internal details and expose only what is necessary.
+Use access modifiers appropriately (e.g., private, protected, public).
+Avoid exposing implementation details unnecessarily.
+Avoid Duplication: Follow the DRY (Don't Repeat Yourself) principle.
+Extract repeated logic into functions or classes.
+Avoid copying and pasting code.
+
+Code:

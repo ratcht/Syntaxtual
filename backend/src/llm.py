@@ -14,12 +14,11 @@ langchain.debug = True
 logging.basicConfig(level=logging.ERROR)
 
 class Template():
-
   @classmethod
-  def get_template_filled(cls, template_name, **kwargs):
-    template: str = json.loads(template_name)
-    template = template.format(**kwargs)
-    return template
+  def get_template_filled(cls, code: str, **kwargs):
+    with open("src/template.txt") as f:
+      return f"{f.read()}\n{code}"
+
 
 
 class LLM():
