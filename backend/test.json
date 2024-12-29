@@ -1,0 +1,54 @@
+{
+  "violations": [
+    {
+      "code_block": "x = []\ntemp = 0",
+      "rule": "Readability",
+      "issue": "Variable names are not meaningful; `x` and `temp` do not indicate their purpose."
+    },
+    {
+      "code_block": "class data:\n    def __init__(self):\n        self.l = []",
+      "rule": "Consistency",
+      "issue": "Class name does not follow naming conventions; should be `Data` to follow PascalCase."
+    },
+    {
+      "code_block": "def add(self,i):\n        global temp\n        temp += 1",
+      "rule": "Encapsulation",
+      "issue": "Use of global variable `temp` violates encapsulation; internal state should be managed within the class."
+    },
+    {
+      "code_block": "def add(self,i):\n        if(i > 0):\n            self.l.append(i)\n        else:\n            self.l.append(0)",
+      "rule": "Simplicity",
+      "issue": "The logic could be simplified; the `if` condition can be replaced with `self.l.append(max(i, 0))`."
+    },
+    {
+      "code_block": "for i in range(len(self.l)):\n            if i < len(self.l):",
+      "rule": "Simplicity",
+      "issue": "Unnecessary condition `if i < len(self.l)` in the loop; it is always true."
+    },
+    {
+      "code_block": "def calculate(self, flag=False):\n        if flag == True:\n            result = sum(self.l) * 1.15\n        else:\n            result = sum(self.l)\n        return result",
+      "rule": "Simplicity",
+      "issue": "Redundant code can be simplified to `result = sum(self.l) * 1.15 if flag else sum(self.l)`."
+    },
+    {
+      "code_block": "except:\n        pass",
+      "rule": "Error Handling",
+      "issue": "Bare exception handling makes debugging difficult; specify the exception type or add logging."
+    },
+    {
+      "code_block": "def func1(a, b, c):\n    if a:\n        if b:\n            if c:\n                return 'yes'\n            else:\n                return 'no'\n        else:\n            if c:\n                return 'maybe'\n            else:\n                return 'unknown'\n    return 'error'",
+      "rule": "Simplicity",
+      "issue": "Nested `if` statements reduce readability; consider restructuring for clarity."
+    },
+    {
+      "code_block": "for i in range(len(vals)):\n        d.add(vals[i])",
+      "rule": "Simplicity",
+      "issue": "The loop can be replaced with a direct iteration: `for val in vals: d.add(val)`."
+    },
+    {
+      "code_block": "print('Final result: ' + str(final_result))",
+      "rule": "Readability",
+      "issue": "String concatenation for printing is less readable; use f-string: `print(f'Final result: {final_result}')`."
+    }
+  ]
+}
