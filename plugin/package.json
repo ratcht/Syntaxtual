@@ -1,0 +1,76 @@
+{
+  "name": "code-chatbot",
+  "displayName": "Code Chatbot",
+  "description": "AI chatbot for code analysis",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "icon": "media/chatbot.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeChatbot.highlightLine",
+        "title": "Highlight Test Line"
+      },
+      {
+        "command": "codeChatbot.highlightWord",
+        "title": "Highlight Test Word"
+      },
+      {
+        "command": "codeChatbot.highlightRange",
+        "title": "Highlight Test Range"
+      },
+      {
+        "command": "codeChatbot.clearHighlights",
+        "title": "Clear Highlights"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codeChatbot",
+          "title": "Code Chatbot",
+          "icon": "media/chatbot.png"
+        }
+      ]
+    },
+    "views": {
+      "codeChatbot": [
+        { 
+          "type": "webview",
+          "id": "codeChatbot.chatView",
+          "name": "Code Chatbot",
+          "icon": "media/chatbot.png" 
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "files": [
+    "out/**/*",
+    "src/ui/chatbot.html"
+  ]
+}
